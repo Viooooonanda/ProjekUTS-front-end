@@ -1,75 +1,172 @@
-/* reset keseluruhan */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* perbaikan */
+    box-sizing: border-box;
 }
 
-/* body */
+
+/* =========================================
+   WARNA
+   ========================================= */
+
+:root {
+    --yellow: #f3e11d;
+    --yellow-light: #fff7c7;
+    --yellow-soft: #ffe98a;
+
+    --header-light: #eaea6d;
+    --header-soft: #f0e188;
+
+    --footer-light: #fcfcb3;
+    --footer-soft: #e2e45f;
+
+    --black: #000000;
+    --brown: #6b4f00;
+    --red: chocolate;
+    --white: #ffffff;
+}
+
+/* =========================================
+   BODY
+   ========================================= */
+
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background: linear-gradient(135deg, #f3e11d, #fff7c7, #ffe98a);
+
+    background: linear-gradient(
+        135deg,
+        #f3e11d,
+        #fff7c7,
+        #ffe98a
+    );
+
     color: black;
+
     min-height: 100vh;
 }
 
-/* header */
-header {
+/* =========================================
+   CONTAINER
+   ========================================= */
+
+.container {
     width: 90%;
+
     max-width: 1100px;
-    margin: 20px auto 0;
+
+    margin: 20px auto;
+
+    background-color: white;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+    width: 100%;
+
+    min-height: 55px;
+
     padding: 15px 25px;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
-    background: linear-gradient(90deg, #eaea6d, #f0e188); 
+
+    background: linear-gradient(
+        90deg,
+        #eaea6d,
+        #f0e188
+    );
+
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+/* =========================================
+   LOGO
+   ========================================= */
+.logo {
+    font-size: 9px;
+
+    font-weight: bold;
+
+    line-height: 10px;
+}
+.logo span {
+    display: block;
+
+    font-size: 7px;
 }
 
-/* logo di header */
+/* GAMBAR LOGO HEADER */
 .logo img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; 
-    object-fit: cover;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    display: block;
+    width: 90px;
+    height: 55px;
+    object-fit: contain;
 }
+/* =========================================
+   NAVIGATION
+   ========================================= */
 
-/* nav */
 nav {
     display: flex;
+
     align-items: center;
+
     gap: 30px;
 }
+nav a {
+    color: black;
 
-.nav-link {
-    color: #fff; /* biar kontras dengan header gelap */
-    font-size: 12px;
+    font-size: 8px;
+
     font-weight: bold;
+
     cursor: pointer;
+
     text-decoration: none;
-}
 
-.nav-link.active {
-    color: chocolate; /* perbaikan selector */
+    white-space: nowrap;
 }
+nav a:hover {
+    color: #6b4f00;
+}
+/* =========================================
+   DROPDOWN
+   ========================================= */
 
-/* dropdown */
 .dropdown {
     position: relative;
 }
-
 .dropdown-content {
     position: absolute;
+
     top: 25px;
+
     right: 0;
+
     width: 150px;
+
     padding: 8px 0;
-    background: linear-gradient(135deg, #f3e11d, #fff7c7);
+
+    background: linear-gradient(
+        135deg,
+        #f3e11d,
+        #fff7c7
+    );
+
     border-radius: 10px;
+
     display: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
     z-index: 100;
 }
 
@@ -79,70 +176,491 @@ nav {
 
 .dropdown-content a {
     display: block;
+
     padding: 9px 15px;
+
     font-size: 10px;
+
     font-weight: bold;
+
     color: black;
+
     text-decoration: none;
+
+    white-space: normal;
 }
 
 .dropdown-content a:hover {
     background: #f3e11d;
+
+    color: #6b4f00;
+}
+/* =========================================
+   BAGIAN UMKM / HERO
+   ========================================= */
+.hero {
+    width: 100%;
+
+    min-height: 190px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background-color: #fffdf0;
+}
+/* =========================================
+   TEKS 
+   ========================================= */
+
+.hero-text {
+    width: 45%;
 }
 
-/* footer */
-footer {
-    width: 90%;
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 20px 25px;
+.hero-text h1 {
+    margin-bottom: 12px;
+
+    font-size: clamp(25px, 3vw, 35px);
+
+    font-weight: 900;
+
+    color: black;
+}
+.hero-text p {
+    margin-bottom: 18px;
+
+    font-size: clamp(8px, 0.8vw, 11px);
+
+    line-height: 1.5;
+
+    max-width: 450px;
+}
+/* =========================================
+   BUTTON
+   ========================================= */
+.button {
+    display: inline-block;
+
+    padding: 8px 11px;
+
+    background-color: black;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 7px;
+
+    font-weight: bold;
+
+    border-radius: 12px;
+
+    transition: 0.2s;
+}
+.button:hover {
+    background-color: #6b4f00;
+}
+/* =========================================
+   GAMBAR 
+   ========================================= */
+.hero-image {
+    width: 45%;
+}
+
+.hero-image img {
+    display: block;
+
+    width: 100%;
+
+    height: 170px;
+
+    object-fit: cover;
+
+    border: 1px solid black;
+
+    border-radius: 5px;
+}
+/* =========================================
+   PRODUK UNGGULAN
+   ========================================= */
+.products {
+    width: 100%;
+
+    padding: 25px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #fff7c7,
+        #ffe98a
+    );
+}
+.products h2 {
+    margin-bottom: 15px;
+
+    font-size: clamp(18px, 2vw, 24px);
+
+    color: black;
+}
+/* =========================================
+   PRODUK LIST
+   ========================================= */
+.product-list {
+    width: 100%;
+
     display: flex;
-    justify-content: space-between;
+
+    flex-direction: row;
+
+    gap: 12px;
+}
+/* =========================================
+   PRODUCT CARD
+   ========================================= */
+
+.product-card {
+    flex: 1;
+
+    min-width: 0;
+}
+.product-card img {
+    display: block;
+
+    width: 100%;
+
+    height: 100px;
+
+    object-fit: cover;
+
+    border: 1px solid black;
+
+    border-radius: 4px;
+}
+.product-card p {
+    margin-top: 7px;
+
+    font-size: 8px;
+
+    font-weight: bold;
+}
+.product-card span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 8px;
+
+    color: #6b4f00;
+}
+/* =========================================
+   LOKASI
+   ========================================= */
+.location {
+    width: 100%;
+
+    padding: 25px 20px;
+
+    min-height: 210px;
+
+    display: flex;
+
+    flex-direction: row;
+
     align-items: center;
-    background: linear-gradient(90deg, #fcfcb3, #e2e45f);
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background-color: #fffdf0;
+}
+/* =========================================
+   TEKS LOKASI
+   ========================================= */
+.location-text {
+    width: 35%;
+}
+.location-text h2 {
+    margin-bottom: 8px;
+
+    font-size: clamp(18px, 2vw, 24px);
+
+    color: black;
+}
+.location-text p {
+    font-size: clamp(8px, 0.8vw, 11px);
+
+    line-height: 1.5;
+
+    max-width: 350px;
+}
+/* =========================================
+   GAMBAR LOKASI
+   ========================================= */
+.location-image {
+    width: 55%;
+}
+.location-image img {
+    display: block;
+
+    width: 100%;
+
+    height: 170px;
+
+    object-fit: cover;
+
+    border: 1px solid black;
+
+    border-radius: 5px;
+}
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    width: 100%;
+
+    min-height: 45px;
+
+    padding: 20px 25px;
+
+    background: linear-gradient(
+        90deg,
+        #fcfcb3,
+        #e2e45f
+    );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
     font-size: 12px;
+
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
     flex-wrap: wrap;
+
     gap: 15px;
 }
+/* LOGO FOOTER */
+.footer-logo {
+    font-size: 7px;
 
-.footer-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     font-weight: bold;
 }
-
-.footer-left img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+/* GAMBAR LOGO HEADER */
+.logo img {
+    display: block;
+    width: 90px;
+    height: 55px;
+    object-fit: contain;
 }
-
-.footer-social {
+/* SOCIAL */
+.social {
     display: flex;
+
     gap: 18px;
+
     flex-wrap: wrap;
 }
-
-.social-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+.social a {
     color: black;
+
     text-decoration: none;
-    font-size: 11px;
+
+    font-size: 7px;
+
     font-weight: bold;
+
     transition: transform 0.2s, color 0.2s;
 }
-
-.social-item i {
-    font-size: 16px;
-}
-
-.social-item:hover {
+.social a:hover {
     color: #6b4f00;
+
     transform: scale(1.05);
 }
+/* =========================================
+   RESPONSIVE TABLET
+   ========================================= */
+
+@media (max-width: 750px) {
+
+    .container {
+        width: 94%;
+
+        margin: 10px auto;
+    }
+
+    /* HEADER */
+    nav {
+        gap: 15px;
+    }
+    nav a {
+        font-size: 7px;
+    }
+    /* UMKM */
+    .hero {
+        gap: 20px;
+
+        padding: 18px;
+    }
+    .hero-image img {
+        height: 150px;
+    }
+    /* PRODUK */
+
+    .product-list {
+        gap: 8px;
+    }
+    .product-card img {
+        height: 110px;
+        object-fit: contain;
+    }
+    /* LOKASI */
+    .location {
+        gap: 20px;
+
+        padding: 18px;
+    }
+    .location-image img,
+    .location-image iframe {
+        height: 150px;
+    }
+}
+/* =========================================
+   otomatis ukuran
+   ========================================= */
+@media (max-width: 550px) {
+    .container {
+        width: 95%;
+
+        margin: 5px auto;
+    }
+    /* HEADER */
+    header {
+        padding: 10px;
+
+        min-height: 50px;
+    }
+    nav {
+        gap: 8px;
+    }
+    nav a {
+        font-size: 6px;
+    }
+    .logo {
+        font-size: 8px;
+    }
+    .logo span {
+        font-size: 6px;
+    }
+    /* UMKM */
+    .hero {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+
+        padding: 15px;
+    }
+    .hero-text {
+        width: 100%;
+    }
+    .hero-text h1 {
+        font-size: 28px;
+    }
+    .hero-text p {
+        font-size: 8px;
+
+        max-width: 100%;
+    }
+    .hero-image {
+        width: 100%;
+    }
+    .hero-image img {
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 1.8 / 1;
+    }
+    /* PRODUK */
+    .products {
+        padding: 18px 15px;
+    }
+    .products h2 {
+        font-size: 19px;
+    }
+    .product-list {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+    .product-card {
+        width: 100%;
+    }
+    .product-card img {
+        width: 100%;
+
+        height: 150px;
+
+        object-fit: contain;
+
+        aspect-ratio: 2 / 1;
+    }
+    .product-card p {
+        font-size: 8px;
+    }
+    .product-card span {
+        font-size: 8px;
+    }
+    /* LOKASI */
+    .location {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+
+        padding: 18px 15px;
+    }
+    .location-text {
+        width: 100%;
+    }
+    .location-text p {
+        max-width: 100%;
+    }
+    .location-image {
+        width: 100%;
+    }
+    .location-image img,
+    .location-image iframe {
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 1.6 / 1;
+    }
+    /* FOOTER */
+    footer {
+        padding: 15px 10px;
+    }
+    .social {
+        gap: 8px;
+    }
+    .social a {
+        font-size: 6px;
+    }
+}
+

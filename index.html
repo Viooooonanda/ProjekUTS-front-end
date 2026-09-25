@@ -1,80 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>UMKM Lokal</title>
+
     <link rel="stylesheet" href="style.css">
-    <title>Ayam Geybok Bang Jarwo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <!-- logo -->
+
+    <!-- CONTAINER UTAMA -->
+    <div class="container">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <header>
+
+           <!-- logo -->
         <div class="logo">
-            <img src="image/logo.jpg">
+            <img src="image/logo.jpg" alt="Logo UMKM">
         </div>
 
-        <nav>
-            <!-- home -->
-            <a href="#" class="nav-link active" onclick="openPage('home-page', this)">
-                HOME
-            </a>
 
-            <!-- produk -->
-            <a href="#" class="nav-link" onclick="openPage('produk-page', this)">
-                PRODUK
-            </a>
+            <!-- Menu berada di sebelah kanan -->
+            <nav>
 
-            <!-- dropdown informasi (produk unggulan, lokasi, pemesanan) -->
-            <div class="dropdown">
-                <!-- informasi -->
-                <a href="#" class="nav-link" onclick="return false;">
-                INFORMASI
+                <a href="#home">
+                    HOME
                 </a>
 
-                <div class="dropdown-content">
-                    <!-- produk unggulan -->
-                    <a href="#" onclick="openPage('home-page', this); setTimeout(function(){
-                        document.getElementById('unggulan').scrollIntoView(); }, 100);">
-                        PRODUK UNGGULAN
+                <a href="#produk">
+                    PRODUK
+                </a>
+
+
+                <!-- Dropdown INFORMASI -->
+                <div class="dropdown">
+
+                    <a href="#">
+                        INFORMASI ▼
                     </a>
 
-                    <!-- lokasi -->
-                    <a href="#" onclick="openPage('home-page', this); setTimeout(function(){
-                        document.getElementById('lokasi').scrollIntoView(); }, 100);">
-                        LOKASI
-                    </a>
+                    <div class="dropdown-content">
 
-                    <!-- pemesanan -->
-                    <a href="#" onclick="openPage('pemesanan-page', this)">
-                        PEMESANAN
-                    </a>
+                        <a href="#produk">
+                            PRODUK UNGGULAN
+                        </a>
+
+                        <a href="#lokasi">
+                            LOKASI
+                        </a>
+
+                        <a href="#">
+                            PEMESANAN
+                        </a>
+
+                    </div>
+
                 </div>
+
+            </nav>
+
+        </header>
+
+
+
+        <!-- ================= BAGIAN UMKM ================= -->
+
+        <section class="hero" id="home">
+
+
+            <!-- TEKS DI KIRI -->
+            <div class="hero-text">
+
+                <h1>
+                    AYAM GROBOK BANG JARWO
+                </h1>
+
+                <p>
+                    Ayam Gerobok Bang Jarwo hadir menyajikan kelezatan kuliner nusantara
+                    dengan cita rasa khas yang menggugah selera. Menggunakan bahan-bahan
+                    segar dan racikan bumbu spesial, kami siap memanjakan lidah anda dengan
+                    dengan sensasi pedas gurih yang tiada tanding.
+                </p>
+
+                <a href="#produk" class="button">
+                    LIHAT PRODUK
+                </a>
+
             </div>
-        </nav>
-    </header>
 
-    <footer>
-        <div class="footer-left">
-            <img src="image/logo.jpg" alt="logo">
-            <span>Ayam Geybok Bang Jarwo</span>
+
+            <!-- GAMBAR DI KANAN -->
+            <div class="hero-image">
+
+           <img src="image/images1.jpg" alt="images1">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= PRODUK ================= -->
+
+        <section class="products" id="produk">
+
+            <h2>
+                Produk Unggulan
+            </h2>
+
+
+            <!-- SEMUA PRODUK MENYAMPING -->
+            <div class="product-list">
+
+
+                <!-- PRODUK 1 -->
+                <div class="product-card">
+
+                    <img src="image/blonde.jpg"
+                         alt="Paket Ayam Blonde">
+
+                    <p>
+                        Paket Ayam Blonde
+                    </p>
+
+                    <span>
+                        Rp. 23k
+                    </span>
+
+                </div>
+
+
+                <!-- PRODUK 2 -->
+                <div class="product-card">
+
+                    <img src="image/geybok.jpg"
+                         alt="Paket Ayam Geybok">
+
+                    <p>
+                        Paket Ayam Geybok
+                    </p>
+
+                    <span>
+                        Rp. 18k
+                    </span>
+
+                </div>
+
+
+                <!-- PRODUK 3 -->
+                <div class="product-card">
+
+                    <img src="image/kriuk.jpg"
+                         alt="Paket Ayam Kriuk">
+
+                    <p>
+                        Paket Ayam Kriuk
+                    </p>
+
+                    <span>
+                        Rp.19k
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= LOKASI ================= -->
+
+        <section class="location" id="lokasi">
+
+
+            <!-- TEKS DI KIRI -->
+            <div class="location-text">
+
+                <h2>
+                    Lokasi
+                </h2>
+
+                <p>
+                    Ayam Geybok Bang Jarwo Trisakti (Tomang)
+                    RQJV+W9C, Jl. Tanjung Gedong, RT.1/RW.9, Tomang, 
+                    Kec. Grogol petamburan, Kota Jakarta Barat, 
+                    Daerah Khusus Ibukota Jakarta 11440
+
+            </div>
+
+
+            <!-- GAMBAR DI KANAN -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15866.896787180138!2d106.77494653144672!3d-6.167675548420464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7003b8c254d%3A0x86d32a15542ced8f!2sAyam%20Geybok%20Bang%20Jarwo%20Trisakti%20(Tomang)!5e0!3m2!1sen!2sid!4v1790353853360!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+               
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+     <!-- logo -->
+        <div class="logo">
+            <img src="image/logo.jpg" alt="Logo UMKM">
         </div>
 
-        <div class="footer-social">
-            <a href="https://facebook.com/ayamgeybokbangjarwo" target="_blank" class="social-item">
-                <i class="fa-brands fa-facebook"></i>
-                <span>@ayamgeybokbangjarwo</span>
-            </a>
-            <a href="https://instagram.com/ayamgeybokbangjarwo" target="_blank" class="social-item">
-                <i class="fa-brands fa-instagram"></i>
-                <span>@ayamgeybokbangjarwo</span>
-            </a>
-            <a href="https://tiktok.com/@ayamgeybokbangjarwo" target="_blank" class="social-item">
-                <i class="fa-brands fa-tiktok"></i>
-                <span>@ayamgeybokbangjarwo</span>
-            </a>
-        </div>
-    </footer>
+            <div class="social">
+
+                <a href="#">
+                    KONTAK
+                </a>
+
+                <a href="#">
+                    INSTAGRAM
+                </a>
+
+                <a href="#">
+                    TIKTOK
+                </a>
+
+            </div>
+
+        </footer>
+
+
+    </div>
 
 </body>
+
 </html>
