@@ -1,14 +1,11 @@
+/* reset keseluruhan */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-/* =========================================
-   WARNA
-   ========================================= */
-
+/* warna */
 :root {
     --yellow: #f3e11d;
     --yellow-light: #fff7c7;
@@ -26,147 +23,91 @@
     --white: #ffffff;
 }
 
-/* =========================================
-   BODY
-   ========================================= */
-
+/* body */
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-
-    background: linear-gradient(
-        135deg,
-        #f3e11d,
-        #fff7c7,
-        #ffe98a
-    );
-
+    background: linear-gradient(135deg, #f3e11d, #fff7c7,#ffe98a);
     color: black;
-
     min-height: 100vh;
 }
 
-/* =========================================
-   CONTAINER
-   ========================================= */
-
+/* container */
 .container {
     width: 90%;
-
     max-width: 1100px;
-
     margin: 20px auto;
-
     background-color: white;
-
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-/* =========================================
-   HEADER
-   ========================================= */
 
+/* header */
 header {
     width: 100%;
-
     min-height: 55px;
-
     padding: 15px 25px;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
-    background: linear-gradient(
-        90deg,
-        #eaea6d,
-        #f0e188
-    );
-
+    background: linear-gradient(90deg,#eaea6d, #f0e188 );
     border-radius: 8px;
-
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-/* =========================================
-   LOGO
-   ========================================= */
+
+/* logo */
 .logo {
-    font-size: 9px;
-
+    font-size: 10px;
     font-weight: bold;
-
     line-height: 10px;
 }
+
 .logo span {
     display: block;
-
-    font-size: 7px;
+    font-size: 10px;
 }
 
-/* GAMBAR LOGO HEADER */
+/* gambar logo di header */
 .logo img {
     display: block;
     width: 90px;
     height: 55px;
     object-fit: contain;
 }
-/* =========================================
-   NAVIGATION
-   ========================================= */
 
+/* navigasi */
 nav {
     display: flex;
-
     align-items: center;
-
     gap: 30px;
 }
+
 nav a {
     color: black;
-
-    font-size: 8px;
-
+    font-size: 15px;
     font-weight: bold;
-
     cursor: pointer;
-
     text-decoration: none;
-
     white-space: nowrap;
 }
+
 nav a:hover {
     color: #6b4f00;
 }
-/* =========================================
-   DROPDOWN
-   ========================================= */
 
+/* dropdown */
 .dropdown {
     position: relative;
 }
+
 .dropdown-content {
     position: absolute;
-
     top: 25px;
-
     right: 0;
-
     width: 150px;
-
     padding: 8px 0;
-
-    background: linear-gradient(
-        135deg,
-        #f3e11d,
-        #fff7c7
-    );
-
+    background: linear-gradient(135deg,#f3e11d,#fff7c7);
     border-radius: 10px;
-
     display: none;
-
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-
     z-index: 100;
 }
 
@@ -176,339 +117,250 @@ nav a:hover {
 
 .dropdown-content a {
     display: block;
-
     padding: 9px 15px;
-
     font-size: 10px;
-
     font-weight: bold;
-
     color: black;
-
     text-decoration: none;
-
     white-space: normal;
 }
 
 .dropdown-content a:hover {
     background: #f3e11d;
-
     color: #6b4f00;
 }
-/* =========================================
-   BAGIAN UMKM / HERO
-   ========================================= */
+
+
+/* bagian umkm / hero */
 .hero {
     width: 100%;
-
     min-height: 190px;
-
     padding: 20px;
-
     display: flex;
-
     flex-direction: row;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 30px;
-
     background-color: #fffdf0;
 }
-/* =========================================
-   TEKS 
-   ========================================= */
 
+/* teks */
 .hero-text {
     width: 45%;
 }
 
 .hero-text h1 {
     margin-bottom: 12px;
-
     font-size: clamp(25px, 3vw, 35px);
-
     font-weight: 900;
-
     color: black;
 }
+
 .hero-text p {
     margin-bottom: 18px;
-
-    font-size: clamp(8px, 0.8vw, 11px);
-
+    font-size: 13px;
     line-height: 1.5;
-
     max-width: 450px;
 }
-/* =========================================
-   BUTTON
-   ========================================= */
+
+/* button */
 .button {
     display: inline-block;
-
     padding: 8px 11px;
-
     background-color: black;
-
     color: white;
-
     text-decoration: none;
-
-    font-size: 7px;
-
+    font-size: 10px;
     font-weight: bold;
-
-    border-radius: 12px;
-
+    border-radius: 15px;
     transition: 0.2s;
 }
+
 .button:hover {
     background-color: #6b4f00;
 }
-/* =========================================
-   GAMBAR 
-   ========================================= */
+
+/* gambar di hero */
 .hero-image {
     width: 45%;
 }
 
 .hero-image img {
     display: block;
-
     width: 100%;
-
-    height: 170px;
-
+    height: 300px;
     object-fit: cover;
-
     border: 1px solid black;
-
     border-radius: 5px;
 }
-/* =========================================
-   PRODUK UNGGULAN
-   ========================================= */
+
+/* produk ungulan */
 .products {
     width: 100%;
-
     padding: 25px 20px;
-
-    background: linear-gradient(
-        135deg,
-        #fff7c7,
-        #ffe98a
-    );
+    background: linear-gradient(135deg,#fff7c7,#ffe98a);
 }
+
 .products h2 {
     margin-bottom: 15px;
-
-    font-size: clamp(18px, 2vw, 24px);
-
+    font-size: 20px;
     color: black;
 }
-/* =========================================
-   PRODUK LIST
-   ========================================= */
+
+/* produk list */
 .product-list {
     width: 100%;
-
     display: flex;
-
     flex-direction: row;
-
     gap: 12px;
 }
-/* =========================================
-   PRODUCT CARD
-   ========================================= */
 
+/* produk card */
 .product-card {
     flex: 1;
-
     min-width: 0;
 }
+
 .product-card img {
     display: block;
-
     width: 100%;
-
-    height: 100px;
-
+    height: 200px;
     object-fit: cover;
-
     border: 1px solid black;
-
     border-radius: 4px;
 }
+
 .product-card p {
     margin-top: 7px;
-
     font-size: 8px;
-
     font-weight: bold;
 }
+
 .product-card span {
     display: block;
-
     margin-top: 3px;
-
     font-size: 8px;
-
     color: #6b4f00;
 }
-/* =========================================
-   LOKASI
-   ========================================= */
+
+/* lokasi */
 .location {
     width: 100%;
-
     padding: 25px 20px;
-
     min-height: 210px;
-
     display: flex;
-
     flex-direction: row;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 30px;
-
     background-color: #fffdf0;
 }
-/* =========================================
-   TEKS LOKASI
-   ========================================= */
+
+/* teks di lokasi */
 .location-text {
     width: 35%;
 }
+
 .location-text h2 {
     margin-bottom: 8px;
-
-    font-size: clamp(18px, 2vw, 24px);
-
+    font-size: 20px;
     color: black;
 }
+
 .location-text p {
-    font-size: clamp(8px, 0.8vw, 11px);
-
+    font-size: 15px;
     line-height: 1.5;
-
     max-width: 350px;
 }
-/* =========================================
-   GAMBAR LOKASI
-   ========================================= */
+
+/* gambar di lokasi */
 .location-image {
     width: 55%;
 }
+
 .location-image img {
     display: block;
-
     width: 100%;
-
-    height: 170px;
-
+    height: 100px;
     object-fit: cover;
-
     border: 1px solid black;
-
     border-radius: 5px;
 }
-/* =========================================
-   FOOTER
-   ========================================= */
+
+/* footer */
 footer {
-    width: 100%;
-
-    min-height: 45px;
-
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
     padding: 20px 25px;
-
-    background: linear-gradient(
-        90deg,
-        #fcfcb3,
-        #e2e45f
-    );
-
     display: flex;
-
-    align-items: center;
-
     justify-content: space-between;
-
+    align-items: center;
+    background: linear-gradient(90deg, #fff9d6, #f7e99a);
     font-size: 12px;
-
     border-radius: 8px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     flex-wrap: wrap;
-
     gap: 15px;
 }
-/* LOGO FOOTER */
-.footer-logo {
-    font-size: 7px;
 
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-weight: bold;
 }
-/* GAMBAR LOGO HEADER */
-.logo img {
-    display: block;
-    width: 90px;
-    height: 55px;
-    object-fit: contain;
+
+.footer-left img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
-/* SOCIAL */
-.social {
+
+.footer-social {
     display: flex;
-
     gap: 18px;
-
     flex-wrap: wrap;
 }
-.social a {
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     color: black;
-
     text-decoration: none;
-
-    font-size: 7px;
-
+    font-size: 11px;
     font-weight: bold;
-
     transition: transform 0.2s, color 0.2s;
 }
-.social a:hover {
-    color: #6b4f00;
 
+.social-item i {
+    font-size: 16px;
+}
+
+.social-item:hover {
+    color: #6b4f00;
     transform: scale(1.05);
 }
-/* =========================================
-   RESPONSIVE TABLET
-   ========================================= */
 
+/* responsiv table */
 @media (max-width: 750px) {
 
     .container {
         width: 94%;
-
         margin: 10px auto;
     }
 
-    /* HEADER */
+    /* header */
     nav {
         gap: 15px;
     }
     nav a {
         font-size: 7px;
     }
-    /* UMKM */
+
+    /* umkm */
     .hero {
         gap: 20px;
 
@@ -517,7 +369,8 @@ footer {
     .hero-image img {
         height: 150px;
     }
-    /* PRODUK */
+
+    /* produk */
 
     .product-list {
         gap: 8px;
@@ -526,10 +379,10 @@ footer {
         height: 110px;
         object-fit: contain;
     }
-    /* LOKASI */
+
+    /* lokasi */
     .location {
         gap: 20px;
-
         padding: 18px;
     }
     .location-image img,
@@ -537,16 +390,15 @@ footer {
         height: 150px;
     }
 }
-/* =========================================
-   otomatis ukuran
-   ========================================= */
+
+/* set otomatis ukuran */
 @media (max-width: 550px) {
     .container {
         width: 95%;
-
         margin: 5px auto;
     }
-    /* HEADER */
+
+    /* header */
     header {
         padding: 10px;
 
@@ -564,14 +416,12 @@ footer {
     .logo span {
         font-size: 6px;
     }
-    /* UMKM */
+
+    /* umkm */
     .hero {
         flex-direction: column;
-
         align-items: stretch;
-
         gap: 15px;
-
         padding: 15px;
     }
     .hero-text {
@@ -595,7 +445,8 @@ footer {
 
         aspect-ratio: 1.8 / 1;
     }
-    /* PRODUK */
+
+    /* produk */
     .products {
         padding: 18px 15px;
     }
@@ -612,11 +463,8 @@ footer {
     }
     .product-card img {
         width: 100%;
-
         height: 150px;
-
         object-fit: contain;
-
         aspect-ratio: 2 / 1;
     }
     .product-card p {
@@ -625,14 +473,12 @@ footer {
     .product-card span {
         font-size: 8px;
     }
-    /* LOKASI */
+
+    /* lokasi */
     .location {
         flex-direction: column;
-
         align-items: stretch;
-
         gap: 15px;
-
         padding: 18px 15px;
     }
     .location-text {
@@ -652,7 +498,7 @@ footer {
 
         aspect-ratio: 1.6 / 1;
     }
-    /* FOOTER */
+    /* footer */
     footer {
         padding: 15px 10px;
     }
