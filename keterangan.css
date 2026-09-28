@@ -1,0 +1,1029 @@
+
+:root { /* Bagian ini menyimpan semua warna yang digunakan pada website agar warna dapat dipanggil kembali dengan nama variabel */
+    --yellow: #f3e11d; /* Warna kuning utama yang digunakan sebagai warna identitas website */
+    --yellow-light: #fff7c7; /* Warna kuning muda yang digunakan pada beberapa background section */
+    --yellow-soft: #ffe98a; /* Warna kuning lembut yang digunakan sebagai pasangan gradasi background */
+
+    --header-light: #eaea6d; /* Warna terang untuk bagian background header */
+    --header-soft: #f0e188; /* Warna kedua untuk gradasi background header */
+
+    --footer-light: #fcfcb3; /* Warna terang untuk background footer */
+    --footer-soft: #e2e45f; /* Warna kedua untuk gradasi background footer */
+
+    --black: #000000; /* Warna hitam yang digunakan untuk teks, garis, dan tombol */
+    --brown: #6b4f00; /* Warna cokelat yang digunakan saat link atau tombol diarahkan mouse */
+    --red: chocolate; /* Menyimpan warna chocolate, tetapi variabel ini tidak digunakan pada syntax CSS lainnya */
+
+    --white: #ffffff; /* Warna putih yang digunakan pada card, form, dropdown, dan teks tombol */
+    --pure-white-gold: #fffdf0; /* Warna putih kekuningan yang digunakan sebagai background bagian produk */
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* { /* Mengatur seluruh elemen pada website agar tidak menggunakan jarak bawaan browser */
+    margin: 0; /* Menghilangkan margin bawaan semua elemen agar posisi setiap bagian website dapat diatur sendiri */
+    padding: 0; /* Menghilangkan padding bawaan semua elemen */
+    box-sizing: border-box; /* Membuat ukuran elemen sudah menghitung padding dan border sehingga layout website lebih mudah dikontrol */
+}
+
+
+html { /* Mengatur keseluruhan halaman website */
+    scroll-behavior: smooth; /* Membuat perpindahan ketika menuju bagian tertentu dalam halaman menjadi halus */
+}
+
+
+body { /* Mengatur tampilan dasar seluruh isi website */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Menentukan font utama yang digunakan seluruh website */
+    
+    background: var(--yellow-light); /* Memberikan background kuning muda pada area halaman yang tidak memiliki background khusus */
+    
+    color: var(--black); /* Menjadikan warna teks utama website berwarna hitam */
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container { /* Mengatur container utama yang membungkus isi halaman website */
+    width: 100%; /* Membuat container memenuhi seluruh lebar halaman */
+    
+    min-height: 100vh; /* Membuat container minimal setinggi layar sehingga halaman dapat memenuhi layar */
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header { /* Mengatur bagian header paling atas website yang berisi logo dan menu navigasi */
+    width: 100%; /* Membuat header memenuhi seluruh lebar layar dari kiri sampai kanan */
+    
+    min-height: 80px; /* Menentukan tinggi minimal area header */
+    
+    padding: 10px 7%; /* Memberikan jarak isi header 10px dari atas-bawah dan 7% dari sisi kiri-kanan */
+    
+    display: flex; /* Menyusun logo dan navigasi agar berada dalam satu baris */
+    
+    justify-content: space-between; /* Menempatkan logo di sisi kiri header dan menu navigasi di sisi kanan header */
+    
+    align-items: center; /* Membuat logo dan menu berada sejajar di tengah secara vertikal */
+    
+    background: linear-gradient( 
+        135deg, /* Menentukan arah gradasi background header secara diagonal */
+        var(--header-light), /* Warna awal gradasi header */
+        var(--header-soft) /* Warna akhir gradasi header */
+    ); 
+    
+    border-bottom: 1px solid var(--black); /* Memberikan garis hitam sebagai pembatas antara header dan isi halaman */
+}
+
+
+/* LOGO */
+
+.logo { /* Mengatur wadah logo yang berada di sebelah kiri header */
+    display: flex; /* Membuat isi logo dapat disejajarkan di dalam area logo */
+    
+    align-items: center; /* Menempatkan isi logo di tengah secara vertikal */
+}
+
+
+.logo img { /* Mengatur gambar logo website yang berada di bagian header */
+    width: 65px; /* Menentukan lebar logo menjadi 65px */
+    
+    height: 65px; /* Menentukan tinggi logo menjadi 65px */
+    
+    object-fit: cover; /* Membuat gambar memenuhi ukuran 65x65 tanpa terlihat gepeng */
+    
+    border-radius: 50%; /* Membuat gambar logo berbentuk lingkaran */
+    
+    border: 2px solid var(--black); /* Memberikan garis hitam di sekeliling logo */
+}
+
+
+/* NAVIGATION */
+
+nav { /* Mengatur area menu navigasi yang berada di sebelah kanan logo */
+    display: flex; /* Menyusun semua menu navigasi dalam satu baris */
+    
+    align-items: center; /* Membuat semua menu berada sejajar secara vertikal */
+    
+    gap: 25px; /* Memberikan jarak 25px antara satu menu navigasi dengan menu lainnya */
+}
+
+
+nav a { /* Mengatur setiap link/menu yang terdapat di dalam navigasi header */
+    position: relative; /* Menjadikan posisi link sebagai acuan untuk elemen yang mungkin diposisikan di dalamnya */
+    
+    color: var(--black); /* Menjadikan teks menu navigasi berwarna hitam */
+    
+    text-decoration: none; /* Menghilangkan garis bawah bawaan link */
+    
+    font-size: 14px; /* Menentukan ukuran tulisan menu navigasi */
+    
+    font-weight: bold; /* Membuat tulisan menu navigasi menjadi tebal */
+    
+    padding: 10px 5px; /* Memberikan area klik pada menu dengan jarak atas-bawah 10px dan kiri-kanan 5px */
+}
+
+
+nav a:hover { /* Mengatur perubahan tampilan menu ketika mouse diarahkan ke menu navigasi */
+    color: var(--brown); /* Mengubah warna tulisan menu menjadi cokelat saat diarahkan mouse */
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown { /* Mengatur menu navigasi yang memiliki submenu/dropdown */
+    position: relative; /* Menjadikan menu ini sebagai acuan posisi untuk kotak dropdown di bawahnya */
+}
+
+
+.dropdown-content { /* Mengatur kotak yang berisi pilihan submenu dari menu dropdown */
+    display: none; /* Menyembunyikan submenu sehingga belum terlihat sebelum menu dropdown diarahkan mouse */
+    
+    position: absolute; /* Membuat kotak submenu dapat ditempatkan secara khusus terhadap menu dropdown */
+    
+    top: 100%; /* Menempatkan kotak submenu tepat di bawah menu dropdown pada header */
+    
+    right: 0; /* Menempatkan sisi kanan kotak submenu sejajar dengan sisi kanan menu dropdown */
+    
+    min-width: 190px; /* Menentukan lebar minimal kotak submenu agar tulisan pilihan tidak terlalu sempit */
+    
+    background: var(--white); /* Memberikan background putih pada kotak submenu */
+    
+    border: 1px solid var(--black); /* Memberikan garis hitam di sekeliling kotak submenu */
+    
+    border-radius: 5px; /* Membuat sudut kotak submenu sedikit melengkung */
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Memberikan bayangan agar dropdown terlihat berada di atas isi halaman */
+    
+    z-index: 100; /* Memastikan dropdown muncul di atas elemen website lainnya */
+}
+
+
+.dropdown-content a { /* Mengatur setiap link yang berada di dalam submenu dropdown */
+    display: block; /* Membuat setiap pilihan submenu menempati satu baris penuh */
+    
+    padding: 12px 15px; /* Memberikan area dalam agar pilihan submenu lebih mudah diklik */
+    
+    font-size: 13px; /* Menentukan ukuran tulisan submenu lebih kecil dari menu utama */
+    
+    color: var(--black); /* Memberikan warna hitam pada tulisan submenu */
+    
+    white-space: nowrap; /* Mencegah tulisan pilihan submenu terpotong menjadi dua baris */
+}
+
+
+.dropdown-content a:hover { /* Mengatur tampilan pilihan dropdown ketika mouse diarahkan ke salah satu pilihan */
+    background: var(--yellow-light); /* Mengubah background pilihan dropdown menjadi kuning muda */
+    
+    color: var(--brown); /* Mengubah tulisan pilihan dropdown menjadi cokelat */
+}
+
+
+.dropdown:hover .dropdown-content { /* Mengatur dropdown ketika menu dropdown di header diarahkan mouse */
+    display: block; /* Menampilkan pilihan submenu yang sebelumnya disembunyikan */
+}
+
+
+/* =========================
+   HERO - HALAMAN 1
+========================= */
+
+.hero { /* Mengatur bagian utama/hero pada Halaman 1 yang berisi teks pengenalan dan gambar */
+    width: 100%; /* Membuat area hero memenuhi seluruh lebar halaman */
+    
+    min-height: 520px; /* Membuat area hero memiliki tinggi minimal 520px */
+    
+    padding: 60px 7%; /* Memberikan jarak isi hero dari atas-bawah 60px dan dari kiri-kanan 7% */
+    
+    display: flex; /* Menyusun bagian teks hero dan gambar hero secara berdampingan */
+    
+    align-items: center; /* Membuat teks dan gambar berada di tengah secara vertikal */
+    
+    justify-content: space-between; /* Menempatkan teks di sisi kiri dan gambar di sisi kanan hero */
+    
+    gap: 50px; /* Memberikan jarak 50px antara bagian teks dan gambar hero */
+    
+    background: linear-gradient( 
+        135deg, /* Menentukan arah gradasi background hero */
+        var(--yellow-light), /* Warna awal background hero */
+        var(--yellow-soft) /* Warna akhir background hero */
+    ); 
+}
+
+
+/* HERO TEXT */
+
+.hero-text { /* Mengatur bagian teks pengenalan website yang berada di sebelah kiri hero */
+    flex: 1; /* Memberikan ruang yang fleksibel untuk bagian teks */
+    
+    max-width: 600px; /* Membatasi lebar teks agar paragraf tidak terlalu panjang ke kanan */
+}
+
+
+.hero-text h1 { /* Mengatur judul utama website yang berada pada bagian hero Halaman 1 */
+    margin-bottom: 20px; /* Memberikan jarak antara judul utama dengan paragraf di bawahnya */
+    
+    font-size: 42px; /* Membuat judul utama berukuran besar agar menjadi fokus utama Halaman 1 */
+    
+    line-height: 1.15; /* Mengatur jarak antarbaris pada judul */
+    
+    color: var(--black); /* Memberikan warna hitam pada judul utama */
+}
+
+
+.hero-text p { /* Mengatur paragraf penjelasan yang berada di bawah judul hero */
+    margin-bottom: 25px; /* Memberikan jarak antara paragraf dengan tombol di bawahnya */
+    
+    font-size: 16px; /* Menentukan ukuran teks penjelasan */
+    
+    line-height: 1.8; /* Memberikan jarak antarbaris agar paragraf lebih mudah dibaca */
+    
+    text-align: justify; /* Membuat paragraf rata kiri dan kanan */
+}
+
+
+/* BUTTON HERO */
+
+.button { /* Mengatur tombol pada bagian hero Halaman 1 yang mengarahkan pengguna ke bagian/halaman yang ditentukan oleh HTML */
+    display: inline-block; /* Membuat tombol dapat memiliki ukuran berdasarkan padding tetapi tetap berada mengikuti aliran teks */
+    
+    padding: 12px 25px; /* Memberikan ukuran area tombol sehingga tombol lebih besar dan mudah diklik */
+    
+    background: var(--black); /* Memberikan background hitam pada tombol hero */
+    
+    color: var(--white); /* Membuat tulisan tombol berwarna putih */
+    
+    text-decoration: none; /* Menghilangkan garis bawah pada link yang dibuat sebagai tombol */
+    
+    border-radius: 12px; /* Membuat sudut tombol melengkung */
+    
+    font-size: 14px; /* Menentukan ukuran tulisan tombol */
+    
+    font-weight: bold; /* Membuat tulisan tombol menjadi tebal */
+}
+
+
+.button:hover { /* Mengatur tombol hero ketika mouse diarahkan ke tombol */
+    background: var(--brown); /* Mengubah background tombol dari hitam menjadi cokelat */
+}
+
+
+/* HERO IMAGE */
+
+.hero-image { /* Mengatur wadah gambar utama yang berada di sebelah kanan teks pada Hero Halaman 1 */
+    flex: 1; /* Memberikan ruang fleksibel untuk area gambar */
+    
+    display: flex; /* Mengatur posisi gambar di dalam wadah gambar */
+    
+    justify-content: center; /* Menempatkan gambar hero di tengah area sebelah kanan */
+}
+
+
+.hero-image img { /* Mengatur gambar utama yang ditampilkan di sebelah kanan hero */
+    width: 100%; /* Membuat gambar menggunakan seluruh lebar area gambar yang tersedia */
+    
+    max-width: 520px; /* Membatasi gambar agar tidak terlalu besar pada layar desktop */
+    
+    height: 350px; /* Menentukan tinggi gambar utama hero */
+    
+    object-fit: cover; /* Membuat gambar memenuhi area 520x350 tanpa berubah bentuk */
+    
+    border-radius: 10px; /* Membuat sudut gambar hero melengkung */
+    
+    border: 1px solid var(--black); /* Memberikan garis hitam di sekeliling gambar hero */
+}
+
+
+/* =========================
+   PRODUK - HALAMAN 1
+========================= */
+
+.products { /* Mengatur section produk yang berada setelah bagian hero pada Halaman 1 */
+    padding: 60px 7%; /* Memberikan jarak antara isi produk dengan batas section */
+    
+    background: var(--pure-white-gold); /* Memberikan background putih kekuningan agar berbeda dari hero */
+    
+    text-align: center; /* Membuat judul dan isi teks produk berada di tengah */
+}
+
+
+.products h2 { /* Mengatur judul bagian produk pada Halaman 1 */
+    margin-bottom: 35px; /* Memberikan jarak antara judul Produk dan kumpulan card */
+    
+    font-size: 30px; /* Menentukan ukuran judul bagian produk */
+}
+
+
+.product-list { /* Mengatur wadah yang berisi seluruh card produk */
+    display: grid; /* Menggunakan Grid agar card produk dapat disusun dalam bentuk kolom */
+    
+    grid-template-columns: repeat(3, 1fr); /* Menyusun produk menjadi 3 kolom pada tampilan desktop */
+    
+    gap: 25px; /* Memberikan jarak antara card produk */
+    
+    max-width: 1100px; /* Membatasi lebar keseluruhan kumpulan card */
+    
+    margin: auto; /* Menempatkan kumpulan card produk tepat di tengah halaman */
+}
+
+
+.product-card { /* Mengatur setiap card produk yang menampilkan gambar, nama, dan harga produk */
+    padding: 15px; /* Memberikan ruang antara isi card dengan garis card */
+    
+    background: var(--white); /* Memberikan background putih pada setiap card */
+    
+    border: 1px solid var(--black); /* Memberikan garis hitam sebagai batas card */
+    
+    border-radius: 8px; /* Membuat sudut card produk melengkung */
+    
+    transition: 0.2s; /* Membuat perubahan posisi/bayangan saat hover menjadi halus */
+}
+
+
+.product-card:hover { /* Mengatur card produk ketika mouse diarahkan ke card */
+    transform: translateY(-4px); /* Mengangkat card produk 4px ke atas saat disentuh mouse */
+    
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Memberikan bayangan pada card saat hover */
+}
+
+
+.product-card img { /* Mengatur gambar produk yang berada di bagian atas setiap card */
+    width: 100%; /* Membuat gambar memenuhi lebar card */
+    
+    height: 220px; /* Menentukan tinggi area gambar produk */
+    
+    object-fit: cover; /* Membuat gambar memenuhi area tanpa terlihat gepeng */
+    
+    border-radius: 5px; /* Membuat sudut gambar produk melengkung */
+    
+    margin-bottom: 15px; /* Memberikan jarak antara gambar produk dan nama produk */
+}
+
+
+.product-card p { /* Mengatur nama produk yang berada di bawah gambar pada card */
+    margin-bottom: 8px; /* Memberikan jarak antara nama produk dan harga */
+    
+    font-size: 16px; /* Menentukan ukuran tulisan nama produk */
+    
+    font-weight: bold; /* Membuat nama produk menjadi tebal */
+}
+
+
+.product-card span { /* Mengatur harga produk yang berada di bawah nama produk */
+    font-size: 15px; /* Menentukan ukuran tulisan harga */
+    
+    font-weight: bold; /* Membuat harga menjadi tebal */
+    
+    color: var(--brown); /* Memberikan warna cokelat pada harga agar berbeda dari nama produk */
+}
+
+
+/* =========================
+   LOKASI - HALAMAN 1
+========================= */
+
+.location { /* Mengatur section lokasi pada Halaman 1 yang berisi informasi lokasi dan Google Maps */
+    padding: 60px 7%; /* Memberikan jarak isi lokasi dari batas section */
+    
+    display: flex; /* Menyusun informasi lokasi dan Google Maps secara berdampingan */
+    
+    align-items: center; /* Membuat teks lokasi dan Maps sejajar di tengah secara vertikal */
+    
+    justify-content: space-between; /* Menempatkan teks lokasi di kiri dan Maps di kanan */
+    
+    gap: 40px; /* Memberikan jarak antara informasi lokasi dan Google Maps */
+    
+    background: linear-gradient( 
+        135deg, /* Menentukan arah gradasi background lokasi */
+        var(--yellow-light), /* Warna awal gradasi */
+        var(--yellow-soft) /* Warna akhir gradasi */
+    ); 
+}
+
+
+.location-text { /* Mengatur bagian teks informasi lokasi yang berada di sebelah kiri Maps */
+    flex: 1; /* Memberikan ruang fleksibel untuk teks lokasi */
+}
+
+
+.location-text h2 { /* Mengatur judul bagian lokasi */
+    margin-bottom: 20px; /* Memberikan jarak antara judul lokasi dengan deskripsinya */
+    
+    font-size: 30px; /* Menentukan ukuran judul lokasi */
+}
+
+
+.location-text p { /* Mengatur teks penjelasan lokasi */
+    font-size: 15px; /* Menentukan ukuran tulisan informasi lokasi */
+    
+    line-height: 1.8; /* Memberikan jarak antarbaris agar informasi mudah dibaca */
+    
+    text-align: justify; /* Membuat teks informasi lokasi rata kiri dan kanan */
+}
+
+
+.location-image { /* Mengatur wadah Google Maps yang berada di sebelah kanan informasi lokasi */
+    flex: 1; /* Memberikan ruang fleksibel untuk area Maps */
+    
+    display: flex; /* Mengatur posisi iframe Maps di dalam wadah */
+    
+    justify-content: center; /* Menempatkan Google Maps di tengah area sebelah kanan */
+}
+
+
+.location-image iframe { /* Mengatur Google Maps yang ditampilkan menggunakan iframe */
+    width: 100%; /* Membuat Maps memenuhi lebar area yang tersedia */
+    
+    max-width: 600px; /* Membatasi lebar maksimal Google Maps */
+    
+    height: 350px; /* Menentukan tinggi tampilan Google Maps */
+    
+    border: 1px solid var(--black); /* Memberikan garis hitam di sekeliling Maps */
+    
+    border-radius: 8px; /* Membuat sudut tampilan Maps melengkung */
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer { /* Mengatur footer website yang berada pada bagian paling bawah halaman */
+    padding: 35px 7%; /* Memberikan jarak isi footer dari batas atas-bawah dan kiri-kanan */
+    
+    background: linear-gradient( 
+        135deg, /* Menentukan arah gradasi footer */
+        var(--footer-light), /* Warna awal gradasi footer */
+        var(--footer-soft) /* Warna akhir gradasi footer */
+    ); 
+    
+    border-top: 1px solid var(--black); /* Memberikan garis hitam di bagian atas footer sebagai pembatas */
+    
+    text-align: center; /* Membuat isi footer berada di tengah */
+}
+
+
+.footer-content h3 { /* Mengatur judul/nama website pada bagian footer */
+    margin-bottom: 10px; /* Memberikan jarak antara judul footer dengan paragraf */
+    
+    font-size: 20px; /* Menentukan ukuran judul footer */
+}
+
+
+.footer-content p { /* Mengatur informasi/deskripsi yang terdapat di footer */
+    margin-bottom: 15px; /* Memberikan jarak antara informasi footer dan ikon sosial media */
+    
+    font-size: 14px; /* Menentukan ukuran tulisan footer */
+}
+
+
+.social { /* Mengatur kumpulan ikon/link media sosial pada footer */
+    display: flex; /* Menyusun semua ikon media sosial dalam satu baris */
+    
+    justify-content: center; /* Menempatkan seluruh ikon media sosial di tengah footer */
+    
+    gap: 20px; /* Memberikan jarak antar ikon media sosial */
+}
+
+
+.social a { /* Mengatur masing-masing link/ikon media sosial */
+    display: flex; /* Membuat isi link dapat diposisikan di tengah */
+    
+    justify-content: center; /* Menempatkan ikon tepat di tengah secara horizontal */
+    
+    align-items: center; /* Menempatkan ikon tepat di tengah secara vertikal */
+    
+    width: 35px; /* Menentukan lebar area setiap ikon */
+    
+    height: 35px; /* Menentukan tinggi area setiap ikon */
+    
+    color: var(--black); /* Memberikan warna hitam pada ikon/link */
+    
+    text-decoration: none; /* Menghilangkan garis bawah link media sosial */
+    
+    font-size: 18px; /* Menentukan ukuran ikon/tulisan media sosial */
+}
+
+
+.social a:hover { /* Mengatur ikon media sosial ketika diarahkan mouse */
+    color: var(--brown); /* Mengubah warna ikon menjadi cokelat saat hover */
+}
+
+
+/* ==================================================
+   HALAMAN 3 - FORM PEMESANAN
+================================================== */
+
+.order { /* Mengatur seluruh section Form Pemesanan pada Halaman 3 */
+    min-height: 700px; /* Membuat area form memiliki tinggi minimal agar halaman form terlihat luas */
+    
+    padding: 50px 20px; /* Memberikan jarak antara form dengan batas section */
+    
+    display: flex; /* Digunakan agar kotak form dapat diposisikan di tengah */
+    
+    justify-content: center; /* Menempatkan kotak form tepat di tengah secara horizontal */
+    
+    align-items: center; /* Menempatkan kotak form tepat di tengah secara vertikal */
+    
+    background: linear-gradient( 
+        135deg, /* Menentukan arah gradasi background Halaman 3 */
+        var(--yellow-light), /* Warna awal background */
+        var(--yellow-soft) /* Warna akhir background */
+    ); 
+}
+
+
+/* FORM CONTAINER */
+
+.order-container { /* Mengatur kotak putih utama yang menjadi tempat seluruh Form Pemesanan Halaman 3 */
+    width: 100%; /* Membuat form dapat menggunakan seluruh lebar yang tersedia */
+    
+    max-width: 650px; /* Membatasi lebar form agar tidak terlalu lebar di desktop */
+    
+    padding: 30px; /* Memberikan ruang antara isi form dengan tepi kotak */
+    
+    background: var(--white); /* Memberikan background putih pada kotak form */
+    
+    border: 1px solid var(--black); /* Memberikan garis hitam di sekeliling kotak form */
+    
+    border-radius: 8px; /* Membuat sudut kotak form melengkung */
+    
+    box-shadow: 0 4px 10px rgba( 
+        0, /* Nilai warna merah untuk bayangan */
+        0, /* Nilai warna hijau untuk bayangan */
+        0, /* Nilai warna biru untuk bayangan */
+        0.1 /* Membuat bayangan transparan agar tidak terlalu gelap */
+    ); 
+}
+
+
+/* JUDUL FORM */
+
+.order-container h2 { /* Mengatur judul Form Pemesanan pada Halaman 3 */
+    margin-bottom: 6px; /* Memberikan jarak antara judul form dengan keterangan di bawahnya */
+    
+    font-size: 28px; /* Menentukan ukuran judul Form Pemesanan */
+    
+    color: var(--black); /* Memberikan warna hitam pada judul form */
+}
+
+
+.order-container > p { /* Mengatur paragraf keterangan yang langsung berada di bawah judul Form Pemesanan */
+    margin-bottom: 25px; /* Memberikan jarak antara keterangan dengan field form berikutnya */
+    
+    font-size: 14px; /* Menentukan ukuran teks keterangan */
+    
+    color: var(--brown); /* Memberikan warna cokelat pada teks keterangan */
+}
+
+
+/* LABEL */
+
+.order-container form > label { /* Mengatur label nama setiap field pada Form Pemesanan */
+    display: block; /* Membuat label berada pada baris sendiri di atas input */
+    
+    margin-bottom: 6px; /* Memberikan jarak antara label dengan input di bawahnya */
+    
+    font-size: 14px; /* Menentukan ukuran tulisan label form */
+    
+    font-weight: bold; /* Membuat nama field form menjadi tebal */
+}
+
+
+/* INPUT */
+
+.order-container input[type="text"], /* Mengatur input teks seperti nama pelanggan atau data teks lainnya pada Form Pemesanan */
+.order-container input[type="number"], /* Mengatur input angka seperti jumlah pesanan */
+.order-container select, /* Mengatur dropdown pilihan pada Form Pemesanan */
+.order-container textarea { /* Mengatur kolom teks panjang seperti catatan pelanggan */
+    width: 100%; /* Membuat seluruh field form memenuhi lebar kotak Form Pemesanan */
+    
+    padding: 11px; /* Memberikan ruang di dalam setiap field agar tulisan tidak menempel pada garis */
+    
+    margin-bottom: 16px; /* Memberikan jarak antara satu field dengan field berikutnya */
+    
+    font-family: Georgia, 
+        'Times New Roman', 
+        Times, 
+        serif; /* Membuat font input sama dengan font utama website */
+    
+    font-size: 14px; /* Menentukan ukuran tulisan yang diketik pengguna */
+    
+    border: 1px solid var(--black); /* Memberikan garis hitam pada setiap field */
+    
+    border-radius: 5px; /* Membuat sudut field form sedikit melengkung */
+    
+    background: var(--white); /* Memberikan background putih pada field */
+    
+    color: var(--black); /* Membuat tulisan yang diketik pengguna berwarna hitam */
+}
+
+
+/* FOCUS */
+
+.order-container input[type="text"]:focus, /* Mengatur tampilan input teks ketika sedang diklik/digunakan */
+.order-container input[type="number"]:focus, /* Mengatur tampilan input angka ketika sedang diklik/digunakan */
+.order-container select:focus, /* Mengatur tampilan dropdown pilihan ketika sedang dipilih */
+.order-container textarea:focus { /* Mengatur tampilan textarea ketika sedang digunakan */
+    outline: none; /* Menghilangkan garis fokus bawaan browser */
+    
+    border: 2px solid var(--brown); /* Mengubah garis field menjadi cokelat agar pengguna mengetahui field yang sedang aktif */
+}
+
+
+/* TEXTAREA */
+
+.order-container textarea { /* Mengatur kotak catatan/keterangan yang dapat diisi teks panjang */
+    height: 90px; /* Menentukan tinggi awal kotak catatan */
+    
+    resize: vertical; /* Pengguna hanya dapat memperbesar atau memperkecil textarea ke arah atas-bawah */
+}
+
+
+/* =========================
+   METODE PEMBAYARAN
+========================= */
+
+.payment { /* Mengatur bagian pilihan metode pembayaran pada Form Pemesanan */
+    display: flex; /* Menyusun pilihan metode pembayaran dalam satu baris */
+    
+    align-items: center; /* Menyamakan posisi radio button dan tulisan secara vertikal */
+    
+    gap: 25px; /* Memberikan jarak antara pilihan metode pembayaran */
+    
+    margin-bottom: 18px; /* Memberikan jarak antara metode pembayaran dan bagian total */
+}
+
+
+.payment label { /* Mengatur label tulisan di samping radio button pembayaran */
+    display: flex !important; /* Membuat radio button dan teksnya dapat disusun sejajar */
+    
+    align-items: center; /* Membuat radio button dan teks berada di tengah secara vertikal */
+    
+    gap: 6px; /* Memberikan jarak kecil antara radio button dan nama metode pembayaran */
+    
+    margin: 0 !important; /* Menghapus margin bawaan agar posisi pilihan pembayaran tetap rapi */
+    
+    font-size: 14px; /* Menentukan ukuran tulisan metode pembayaran */
+    
+    font-weight: normal !important; /* Membuat tulisan metode pembayaran tidak tebal */
+}
+
+
+.payment input[type="radio"] { /* Mengatur radio button yang digunakan untuk memilih metode pembayaran */
+    width: auto !important; /* Membiarkan ukuran radio button mengikuti ukuran bawaan browser */
+    
+    margin: 0 !important; /* Menghilangkan margin agar radio button sejajar dengan tulisannya */
+    
+    padding: 0 !important; /* Menghilangkan padding pada radio button */
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.total { /* Mengatur kotak yang menampilkan total harga pesanan pada Form Pemesanan */
+    display: flex; /* Menyusun tulisan Total di kiri dan jumlah harga di kanan */
+    
+    justify-content: space-between; /* Mendorong tulisan Total ke kiri dan nilai harga ke kanan */
+    
+    align-items: center; /* Membuat tulisan dan harga berada sejajar secara vertikal */
+    
+    padding: 13px; /* Memberikan jarak antara isi total dengan batas kotak */
+    
+    margin-bottom: 18px; /* Memberikan jarak antara total harga dan tombol submit */
+    
+    background: var(--yellow-light); /* Memberikan background kuning muda agar bagian total terlihat berbeda */
+    
+    border: 1px solid var(--black); /* Memberikan garis hitam pada kotak total */
+    
+    border-radius: 5px; /* Membuat sudut kotak total melengkung */
+}
+
+
+/* ================= FOOTER ================= */
+
+footer { /* Mengatur tampilan footer versi kedua yang digunakan untuk mengatur posisi isi footer */
+    width: 100%; /* Membuat footer menggunakan seluruh lebar yang tersedia */
+    
+    max-width: 1100px; /* Membatasi lebar maksimal footer */
+    
+    margin: 30px auto; /* Memberikan jarak atas-bawah dan membuat footer berada di tengah */
+    
+    padding: 20px 25px; /* Memberikan jarak antara isi footer dengan tepi footer */
+    
+    display: flex; /* Menyusun isi footer secara fleksibel */
+    
+    justify-content: space-between; /* Menempatkan bagian isi footer di sisi kiri dan kanan */
+    
+    align-items: center; /* Menyamakan posisi isi footer secara vertikal */
+    
+    background: linear-gradient(90deg, var(--footer-light), var(--footer-soft)); /* Memberikan background gradasi horizontal pada footer */
+    
+    font-size: 12px; /* Menentukan ukuran teks footer */
+    
+    border-radius: 8px; /* Membuat sudut footer melengkung */
+    
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Memberikan bayangan lembut pada footer */
+    
+    flex-wrap: wrap; /* Membolehkan isi footer turun ke baris berikutnya jika layar tidak cukup */
+    
+    gap: 15px; /* Memberikan jarak antar isi footer */
+}
+
+
+.total span { /* Mengatur tulisan label Total pada kotak total */
+    font-size: 15px; /* Menentukan ukuran tulisan Total */
+    
+    font-weight: bold; /* Membuat tulisan Total menjadi tebal */
+}
+
+
+.total strong { /* Mengatur nilai harga total pada kotak total */
+    font-size: 17px; /* Membuat angka total harga lebih besar agar mudah terlihat */
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.order-container button { /* Mengatur tombol submit untuk mengirim data Form Pemesanan pada Halaman 3 */
+    width: 100%; /* Membuat tombol submit memenuhi seluruh lebar kotak form */
+    
+    padding: 12px; /* Memberikan tinggi/ruang dalam tombol agar mudah diklik */
+    
+    background: var(--black); /* Memberikan background hitam pada tombol submit */
+    
+    color: var(--white); /* Membuat tulisan tombol berwarna putih */
+    
+    border: none; /* Menghilangkan garis border bawaan tombol */
+    
+    border-radius: 12px; /* Membuat sudut tombol submit melengkung */
+    
+    font-family: Georgia, 
+        'Times New Roman', 
+        Times, 
+        serif; /* Membuat font tombol sama dengan font website */
+    
+    font-size: 14px; /* Menentukan ukuran tulisan tombol */
+    
+    font-weight: bold; /* Membuat tulisan tombol menjadi tebal */
+    
+    cursor: pointer; /* Mengubah kursor menjadi bentuk tangan ketika diarahkan ke tombol */
+}
+
+
+.order-container button:hover { /* Mengatur tombol submit ketika mouse diarahkan ke tombol */
+    background: var(--brown); /* Mengubah background tombol dari hitam menjadi cokelat */
+}
+
+
+/* KETERANGAN */
+
+.order-container small { /* Mengatur tulisan kecil/keterangan tambahan yang berada di bagian bawah form */
+    display: block; /* Membuat keterangan berada dalam satu baris penuh */
+    
+    margin-top: 9px; /* Memberikan jarak antara tombol dan keterangan */
+    
+    text-align: center; /* Menempatkan keterangan di tengah */
+    
+    font-size: 11px; /* Membuat ukuran keterangan lebih kecil */
+    
+    color: var(--brown); /* Memberikan warna cokelat pada keterangan */
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) { /* Mengubah tampilan website ketika lebar layar 900px atau kurang, misalnya tablet atau layar laptop yang lebih kecil */
+
+    /* HEADER */
+
+    header { /* Mengatur ulang header agar memiliki ruang kiri-kanan yang lebih kecil pada layar 900px */
+        padding: 10px 5%; /* Mengurangi jarak kiri-kanan header dari 7% menjadi 5% */
+    }
+
+
+    nav { /* Mengatur jarak antar menu navigasi pada layar yang lebih kecil */
+        gap: 15px; /* Mengurangi jarak antar menu agar semua menu tetap muat */
+    }
+
+
+    /* HERO */
+
+    .hero { /* Mengubah posisi teks dan gambar hero ketika layar mengecil */
+        padding: 45px 5%; /* Mengurangi jarak isi hero dari tepi layar */
+        
+        flex-direction: column; /* Mengubah posisi teks dan gambar dari kiri-kanan menjadi atas-bawah */
+        
+        text-align: center; /* Membuat teks hero berada di tengah */
+    }
+
+
+    .hero-text { /* Mengatur area teks hero pada layar yang lebih kecil */
+        max-width: 800px; /* Memberikan batas lebar teks agar tetap nyaman dibaca */
+    }
+
+
+    .hero-text h1 { /* Mengatur judul hero pada layar yang lebih kecil */
+        font-size: 34px; /* Mengecilkan ukuran judul dari 42px agar sesuai layar */
+    }
+
+
+    .hero-text p { /* Mengatur paragraf hero pada layar yang lebih kecil */
+        text-align: center; /* Mengubah paragraf menjadi rata tengah */
+    }
+
+
+    .hero-image img { /* Mengatur gambar utama hero pada layar yang lebih kecil */
+        max-width: 600px; /* Menentukan batas lebar gambar agar tidak terlalu besar */
+        
+        height: 320px; /* Mengurangi tinggi gambar hero */
+    }
+
+
+    /* PRODUCTS */
+
+    .products { /* Mengatur section produk pada layar yang lebih kecil */
+        padding: 50px 5%; /* Mengurangi jarak section produk dari sisi layar */
+    }
+
+
+    .product-list { /* Mengatur jarak antar card produk pada layar yang lebih kecil */
+        gap: 15px; /* Mengurangi jarak antar card agar lebih hemat ruang */
+    }
+
+
+    /* LOCATION */
+
+    .location { /* Mengubah susunan informasi lokasi dan Maps pada layar yang lebih kecil */
+        padding: 50px 5%; /* Mengurangi jarak section lokasi dari sisi layar */
+        
+        flex-direction: column; /* Memindahkan teks lokasi ke atas dan Google Maps ke bawah */
+    }
+
+
+    .location-text { /* Mengatur teks informasi lokasi pada layar yang lebih kecil */
+        width: 100%; /* Membuat teks lokasi menggunakan seluruh lebar yang tersedia */
+    }
+
+
+    .location-image { /* Mengatur area Google Maps pada layar yang lebih kecil */
+        width: 100%; /* Membuat area Maps menggunakan seluruh lebar layar */
+    }
+
+
+    .location-image iframe { /* Mengatur Google Maps pada layar yang lebih kecil */
+        max-width: 100%; /* Membuat Maps tidak melebihi lebar layar */
+    }
+
+}
+
+
+@media (max-width: 600px) { /* Mengatur tampilan website khusus untuk layar HP dengan lebar maksimal 600px */
+
+    /* HEADER */
+
+    header { /* Mengubah susunan header pada HP */
+        flex-direction: column; /* Memindahkan logo ke atas dan menu navigasi ke bawah */
+        
+        gap: 15px; /* Memberikan jarak antara logo dengan navigasi */
+        
+        padding: 15px 5%; /* Memberikan jarak header dari tepi layar HP */
+    }
+
+
+    nav { /* Mengatur navigasi pada layar HP */
+        flex-wrap: wrap; /* Membolehkan menu navigasi turun ke baris berikutnya jika tidak cukup */
+        
+        justify-content: center; /* Menempatkan seluruh menu navigasi di tengah */
+        
+        gap: 10px; /* Mengurangi jarak antar menu agar lebih mudah muat di HP */
+    }
+
+
+    nav a { /* Mengatur tulisan menu navigasi pada HP */
+        font-size: 12px; /* Mengecilkan ukuran tulisan menu */
+    }
+
+
+    .dropdown-content { /* Mengatur posisi dropdown ketika website dibuka melalui HP */
+        right: auto; /* Menghilangkan posisi dropdown yang menempel dari sisi kanan */
+        
+        left: 50%; /* Menempatkan titik awal dropdown di tengah menu */
+        
+        transform: translateX(-50%); /* Menggeser dropdown agar posisi kotaknya benar-benar berada di tengah */
+    }
+
+
+    /* HERO */
+
+    .hero { /* Mengatur bagian hero pada HP */
+        padding: 35px 5%; /* Mengurangi jarak hero dari tepi layar HP */
+    }
+
+
+    .hero-text h1 { /* Mengatur judul utama hero pada HP */
+        font-size: 27px; /* Mengecilkan judul agar tidak memenuhi layar HP */
+    }
+
+
+    .hero-text p { /* Mengatur paragraf hero pada HP */
+        font-size: 14px; /* Mengecilkan ukuran paragraf */
+        
+        line-height: 1.6; /* Mengatur jarak antarbaris agar paragraf tetap nyaman dibaca */
+    }
+
+
+    .hero-image img { /* Mengatur gambar utama hero pada HP */
+        height: 250px; /* Mengurangi tinggi gambar agar sesuai dengan layar HP */
+    }
+
+
+    /* PRODUCTS */
+
+    .products h2 { /* Mengatur judul produk pada HP */
+        font-size: 25px; /* Mengecilkan ukuran judul produk */
+    }
+
+
+    .product-list { /* Mengatur susunan card produk pada HP */
+        grid-template-columns: 1fr; /* Mengubah 3 kolom menjadi 1 kolom sehingga card tersusun dari atas ke bawah */
+    }
+
+
+    .product-card img { /* Mengatur gambar produk pada card ketika dibuka melalui HP */
+        height: 230px; /* Menentukan tinggi gambar produk pada layar HP */
+    }
+
+
+    /* LOCATION */
+
+    .location { /* Mengatur section lokasi pada HP */
+        padding: 40px 5%; /* Mengurangi jarak section lokasi dari tepi layar */
+    }
+
+
+    .location-text h2 { /* Mengatur judul lokasi pada HP */
+        font-size: 25px; /* Mengecilkan ukuran judul lokasi */
+    }
+
+
+    .location-text p { /* Mengatur teks informasi lokasi pada HP */
+        font-size: 14px; /* Mengecilkan ukuran tulisan lokasi */
+    }
+
+
+    .location-image iframe { /* Mengatur Google Maps pada HP */
+        height: 300px; /* Mengurangi tinggi Maps agar sesuai dengan layar HP */
+    }
+
+
+    /* FORM PEMESANAN */
+
+    .order { /* Mengatur section Form Pemesanan Halaman 3 pada HP */
+        min-height: auto; /* Membiarkan tinggi section mengikuti isi form sehingga tidak ada ruang kosong berlebihan */
+        
+        padding: 35px 15px; /* Memberikan jarak form dari sisi layar HP */
+    }
+
+
+    .order-container { /* Mengatur kotak putih Form Pemesanan pada HP */
+        padding: 20px; /* Mengurangi padding agar isi form tidak terlalu sempit di HP */
+    }
+
+
+    .order-container h2 { /* Mengatur judul Form Pemesanan pada HP */
+        font-size: 24px; /* Mengecilkan ukuran judul form */
+    }
+
+
+    .payment { /* Mengatur pilihan metode pembayaran pada HP */
+        flex-direction: column; /* Mengubah pilihan pembayaran dari kiri-kanan menjadi atas-bawah */
+        
+        align-items: flex-start; /* Menempatkan semua pilihan pembayaran mulai dari sisi kiri */
+        
+        gap: 10px; /* Memberikan jarak antar pilihan pembayaran */
+    }
+
+    /* FOOTER */
+
+    footer { /* Mengatur footer ketika website dibuka melalui HP */
+    width: 100%; /* Membuat footer memenuhi lebar layar */
+    
+    padding: 30px 5%; /* Memberikan jarak isi footer dari sisi layar HP */
+}
+
+}
