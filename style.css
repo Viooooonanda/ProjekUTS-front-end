@@ -1,11 +1,3 @@
-/* reset keseluruhan */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* warna */
 :root {
     --yellow: #f3e11d;
     --yellow-light: #fff7c7;
@@ -20,474 +12,984 @@
     --black: #000000;
     --brown: #6b4f00;
     --red: chocolate;
+
     --white: #ffffff;
     --pure-white-gold: #fffdf0;
 }
 
-/* body */
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background: linear-gradient(135deg, var(--yellow), var(--yellow-light), var(--yellow-soft));
+
+    background: var(--yellow-light);
+
     color: var(--black);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
     min-height: 100vh;
 }
 
-/* container */
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 20px auto;
-    background-color: var(--white);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
+
 header {
     width: 100%;
-    min-height: 55px;
-    padding: 15px 25px;
+
+    min-height: 80px;
+
+    padding: 10px 7%;
+
     display: flex;
-    flex-wrap: nowrap;              /* header tidak boleh turun baris */
+
     justify-content: space-between;
+
     align-items: center;
-    background: linear-gradient(90deg, var(--header-light), var(--header-soft));
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    background: linear-gradient(
+        135deg,
+        var(--header-light),
+        var(--header-soft)
+    );
+
+    border-bottom: 1px solid var(--black);
 }
 
-/* gambar logo di header */
+
+/* LOGO */
+
 .logo {
-    flex-shrink: 0;                 /* logo tidak ikut mengecil/terdorong */
+    display: flex;
+
+    align-items: center;
 }
+
 
 .logo img {
-    display: block;
-    width: 90px;
-    height: 55px;
+    width: 65px;
+
+    height: 65px;
+
+    object-fit: cover;
+
     border-radius: 50%;
-    object-fit: contain;
+
+    border: 2px solid var(--black);
 }
 
-/* navigasi */
+
+/* NAVIGATION */
+
 nav {
     display: flex;
-    flex-wrap: nowrap;
+
     align-items: center;
-    gap: 30px;
-    flex-shrink: 0;                 /* menu tetap satu baris */
+
+    gap: 25px;
 }
+
 
 nav a {
+    position: relative;
+
     color: var(--black);
-    font-size: 15px;
-    font-weight: bold;
+
     text-decoration: none;
-    white-space: nowrap;            /* cegah teks turun ke baris */
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    padding: 10px 5px;
 }
+
 
 nav a:hover {
-    color: var(--red);
+    color: var(--brown);
 }
 
-/* dropdown */
+
+/* =========================
+   DROPDOWN
+========================= */
+
 .dropdown {
     position: relative;
 }
 
+
 .dropdown-content {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 170px;
-    padding: 8px 0;
-    background: linear-gradient(135deg, var(--yellow), var(--yellow-light));
-    border-radius: 10px;
     display: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+    position: absolute;
+
+    top: 100%;
+
+    right: 0;
+
+    min-width: 190px;
+
+    background: var(--white);
+
+    border: 1px solid var(--black);
+
+    border-radius: 5px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
     z-index: 100;
 }
 
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-    display: block;
-}
 
 .dropdown-content a {
     display: block;
-    padding: 9px 15px;
-    font-size: 12px;
-    font-weight: bold;
+
+    padding: 12px 15px;
+
+    font-size: 13px;
+
     color: var(--black);
+
+    white-space: nowrap;
 }
 
+
 .dropdown-content a:hover {
-    background: var(--yellow);
+    background: var(--yellow-light);
+
     color: var(--brown);
 }
 
-/* ================= HERO ================= */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* =========================
+   HERO - HALAMAN 1
+========================= */
+
 .hero {
     width: 100%;
-    min-height: 190px;
-    padding: 20px;
+
+    min-height: 520px;
+
+    padding: 60px 7%;
+
     display: flex;
-    flex-direction: row;
+
     align-items: center;
+
     justify-content: space-between;
-    gap: 30px;
-    background-color: var(--pure-white-gold);
+
+    gap: 50px;
+
+    background: linear-gradient(
+        135deg,
+        var(--yellow-light),
+        var(--yellow-soft)
+    );
 }
 
-/* teks */
+
+/* HERO TEXT */
+
 .hero-text {
-    width: 45%;
+    flex: 1;
+
+    max-width: 600px;
 }
+
 
 .hero-text h1 {
-    margin-bottom: 12px;
-    font-size: clamp(25px, 3vw, 35px);
-    font-weight: 900;
+    margin-bottom: 20px;
+
+    font-size: 42px;
+
+    line-height: 1.15;
+
     color: var(--black);
 }
 
+
 .hero-text p {
-    margin-bottom: 18px;
-    font-size: 14px;
-    line-height: 1.5;
-    max-width: 450px;
+    margin-bottom: 25px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    text-align: justify;
 }
 
-/* button */
+
+/* BUTTON HERO */
+
 .button {
     display: inline-block;
-    padding: 9px 14px;
-    background-color: var(--black);
+
+    padding: 12px 25px;
+
+    background: var(--black);
+
     color: var(--white);
+
     text-decoration: none;
-    font-size: 12px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
     font-weight: bold;
-    border-radius: 15px;
+}
+
+
+.button:hover {
+    background: var(--brown);
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.hero-image img {
+    width: 100%;
+
+    max-width: 520px;
+
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--black);
+}
+
+
+/* =========================
+   PRODUK - HALAMAN 1
+========================= */
+
+.products {
+    padding: 60px 7%;
+
+    background: var(--pure-white-gold);
+
+    text-align: center;
+}
+
+
+.products h2 {
+    margin-bottom: 35px;
+
+    font-size: 30px;
+}
+
+
+.product-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.product-card {
+    padding: 15px;
+
+    background: var(--white);
+
+    border: 1px solid var(--black);
+
+    border-radius: 8px;
+
     transition: 0.2s;
 }
 
-.button:hover {
-    background-color: var(--red);
+
+.product-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* gambar di hero */
-.hero-image {
-    width: 45%;
-}
-
-.hero-image img {
-    display: block;
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border: 1px solid var(--black);
-    border-radius: 5px;
-}
-
-/* ================= PRODUK UNGGULAN ================= */
-.products {
-    width: 100%;
-    padding: 25px 20px;
-    background: linear-gradient(135deg, var(--yellow-light), var(--yellow-soft));
-}
-
-.products h2 {
-    margin-bottom: 15px;
-    font-size: 20px;
-    color: var(--black);
-}
-
-/* produk list */
-.product-list {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-}
-
-/* produk card */
-.product-card {
-    flex: 1;
-    min-width: 0;
-}
 
 .product-card img {
-    display: block;
     width: 100%;
-    height: 200px;
+
+    height: 220px;
+
     object-fit: cover;
-    border: 1px solid var(--black);
-    border-radius: 4px;
+
+    border-radius: 5px;
+
+    margin-bottom: 15px;
 }
 
+
 .product-card p {
-    margin-top: 7px;
-    font-size: 14px;
+    margin-bottom: 8px;
+
+    font-size: 16px;
+
     font-weight: bold;
 }
 
+
 .product-card span {
-    display: block;
-    margin-top: 3px;
-    font-size: 13px;
+    font-size: 15px;
+
+    font-weight: bold;
+
     color: var(--brown);
 }
 
-/* ================= LOKASI ================= */
+
+/* =========================
+   LOKASI - HALAMAN 1
+========================= */
+
 .location {
-    width: 100%;
-    padding: 25px 20px;
-    min-height: 210px;
+    padding: 60px 7%;
+
     display: flex;
-    flex-direction: row;
+
     align-items: center;
+
     justify-content: space-between;
-    gap: 30px;
-    background-color: var(--pure-white-gold);
+
+    gap: 40px;
+
+    background: linear-gradient(
+        135deg,
+        var(--yellow-light),
+        var(--yellow-soft)
+    );
 }
 
-/* teks di lokasi */
+
 .location-text {
-    width: 40%;
+    flex: 1;
 }
+
 
 .location-text h2 {
-    margin-bottom: 8px;
-    font-size: 20px;
-    color: var(--black);
+    margin-bottom: 20px;
+
+    font-size: 30px;
 }
+
 
 .location-text p {
     font-size: 15px;
-    line-height: 1.5;
-    max-width: 350px;
+
+    line-height: 1.8;
+
+    text-align: justify;
 }
 
-/* peta di lokasi */
+
 .location-image {
-    width: 55%;
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
 }
+
 
 .location-image iframe {
-    display: block;
     width: 100%;
-    height: 250px;
+
+    max-width: 600px;
+
+    height: 350px;
+
     border: 1px solid var(--black);
+
+    border-radius: 8px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 35px 7%;
+
+    background: linear-gradient(
+        135deg,
+        var(--footer-light),
+        var(--footer-soft)
+    );
+
+    border-top: 1px solid var(--black);
+
+    text-align: center;
+}
+
+
+.footer-content h3 {
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+
+.footer-content p {
+    margin-bottom: 15px;
+
+    font-size: 14px;
+}
+
+
+.social {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.social a {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 35px;
+
+    height: 35px;
+
+    color: var(--black);
+
+    text-decoration: none;
+
+    font-size: 18px;
+}
+
+
+.social a:hover {
+    color: var(--brown);
+}
+
+
+/* ==================================================
+   HALAMAN 3 - FORM PEMESANAN
+================================================== */
+
+.order {
+    min-height: 700px;
+
+    padding: 50px 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        var(--yellow-light),
+        var(--yellow-soft)
+    );
+}
+
+
+/* FORM CONTAINER */
+
+.order-container {
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 30px;
+
+    background: var(--white);
+
+    border: 1px solid var(--black);
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 10px rgba(
+        0,
+        0,
+        0,
+        0.1
+    );
+}
+
+
+/* JUDUL FORM */
+
+.order-container h2 {
+    margin-bottom: 6px;
+
+    font-size: 28px;
+
+    color: var(--black);
+}
+
+
+.order-container > p {
+    margin-bottom: 25px;
+
+    font-size: 14px;
+
+    color: var(--brown);
+}
+
+
+/* LABEL */
+
+.order-container form > label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* INPUT */
+
+.order-container input[type="text"],
+.order-container input[type="number"],
+.order-container select,
+.order-container textarea {
+    width: 100%;
+
+    padding: 11px;
+
+    margin-bottom: 16px;
+
+    font-family: Georgia,
+        'Times New Roman',
+        Times,
+        serif;
+
+    font-size: 14px;
+
+    border: 1px solid var(--black);
+
+    border-radius: 5px;
+
+    background: var(--white);
+
+    color: var(--black);
+}
+
+
+/* FOCUS */
+
+.order-container input[type="text"]:focus,
+.order-container input[type="number"]:focus,
+.order-container select:focus,
+.order-container textarea:focus {
+    outline: none;
+
+    border: 2px solid var(--brown);
+}
+
+
+/* TEXTAREA */
+
+.order-container textarea {
+    height: 90px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   METODE PEMBAYARAN
+========================= */
+
+.payment {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 18px;
+}
+
+
+.payment label {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin: 0 !important;
+
+    font-size: 14px;
+
+    font-weight: normal !important;
+}
+
+
+.payment input[type="radio"] {
+    width: auto !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.total {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 13px;
+
+    margin-bottom: 18px;
+
+    background: var(--yellow-light);
+
+    border: 1px solid var(--black);
+
     border-radius: 5px;
 }
 
-/* ================= FOOTER ================= */
-footer {
-    width: 90%;
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 20px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(90deg, var(--footer-light), var(--footer-soft));
-    font-size: 12px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    flex-wrap: wrap;
-    gap: 15px;
-}
 
-.footer-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.total span {
+    font-size: 15px;
+
     font-weight: bold;
 }
 
-.footer-left img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+
+.total strong {
+    font-size: 17px;
 }
 
-.footer-social {
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.order-container button {
+    width: 100%;
+
+    padding: 12px;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-family: Georgia,
+        'Times New Roman',
+        Times,
+        serif;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
 }
 
-.social-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--black);
-    text-decoration: none;
+
+.order-container button:hover {
+    background: var(--brown);
+}
+
+
+/* KETERANGAN */
+
+.order-container small {
+    display: block;
+
+    margin-top: 9px;
+
+    text-align: center;
+
     font-size: 11px;
-    font-weight: bold;
-    transition: transform 0.2s, color 0.2s;
-}
 
-.social-item i {
-    font-size: 16px;
-}
-
-.social-item:hover {
     color: var(--brown);
-    transform: scale(1.05);
 }
 
-/* ================= TABLET (max 900px) ================= */
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 900px) {
 
-    .container {
-        width: 94%;
-        margin: 10px auto;
-    }
+    /* HEADER */
 
-    /* header: tetap satu baris */
     header {
-        padding: 12px 18px;
+        padding: 10px 5%;
     }
-    .logo img {
-        width: 75px;
-        height: 48px;
-    }
+
+
     nav {
-        gap: 20px;
-    }
-    nav a {
-        font-size: 13px;
-    }
-
-    /* hero */
-    .hero {
-        gap: 20px;
-        padding: 18px;
-    }
-    .hero-image img {
-        height: 220px;
-    }
-
-    /* produk */
-    .product-list {
-        gap: 8px;
-    }
-    .product-card img {
-        height: 150px;
-    }
-
-    /* lokasi */
-    .location {
-        gap: 20px;
-        padding: 18px;
-    }
-    .location-image iframe {
-        height: 220px;
-    }
-}
-
-/* ================= MOBILE (max 600px) ================= */
-@media (max-width: 600px) {
-
-    .container {
-        width: 95%;
-        margin: 5px auto;
-    }
-
-    /* header: tetap satu baris, hanya diperkecil */
-    header {
-        padding: 8px 10px;
-        min-height: 50px;
-    }
-    .logo img {
-        width: 55px;
-        height: 40px;
-    }
-    nav {
-        gap: 10px;
-    }
-    nav a {
-        font-size: 11px;
-    }
-    .dropdown-content {
-        width: 150px;
-    }
-    .dropdown-content a {
-        font-size: 11px;
-    }
-
-    /* hero */
-    .hero {
-        flex-direction: column;
-        align-items: stretch;
         gap: 15px;
-        padding: 15px;
     }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 45px 5%;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
     .hero-text {
-        width: 100%;
+        max-width: 800px;
     }
+
+
     .hero-text h1 {
-        font-size: 26px;
+        font-size: 34px;
     }
+
+
     .hero-text p {
-        font-size: 13px;
-        max-width: 100%;
+        text-align: center;
     }
-    .hero-image {
-        width: 100%;
-    }
+
+
     .hero-image img {
-        height: auto;
-        aspect-ratio: 1.8 / 1;
+        max-width: 600px;
+
+        height: 320px;
     }
 
-    /* produk */
+
+    /* PRODUCTS */
+
     .products {
-        padding: 18px 15px;
-    }
-    .products h2 {
-        font-size: 19px;
-    }
-    .product-list {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .product-card img {
-        height: auto;
-        aspect-ratio: 2 / 1;
-        object-fit: contain;
+        padding: 50px 5%;
     }
 
-    /* lokasi */
-    .location {
-        flex-direction: column;
-        align-items: stretch;
+
+    .product-list {
         gap: 15px;
-        padding: 18px 15px;
     }
+
+
+    /* LOCATION */
+
+    .location {
+        padding: 50px 5%;
+
+        flex-direction: column;
+    }
+
+
     .location-text {
         width: 100%;
     }
-    .location-text p {
-        max-width: 100%;
-    }
+
+
     .location-image {
         width: 100%;
     }
+
+
     .location-image iframe {
-        height: auto;
-        aspect-ratio: 1.6 / 1;
+        max-width: 100%;
     }
 
-    /* footer */
-    footer {
-        padding: 15px 10px;
+}
+
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    header {
         flex-direction: column;
-        text-align: center;
+
+        gap: 15px;
+
+        padding: 15px 5%;
     }
-    .footer-social {
+
+
+    nav {
+        flex-wrap: wrap;
+
         justify-content: center;
-        gap: 12px;
+
+        gap: 10px;
     }
+
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    .dropdown-content {
+        right: auto;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 35px 5%;
+    }
+
+
+    .hero-text h1 {
+        font-size: 27px;
+    }
+
+
+    .hero-text p {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    .hero-image img {
+        height: 250px;
+    }
+
+
+    /* PRODUCTS */
+
+    .products h2 {
+        font-size: 25px;
+    }
+
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-card img {
+        height: 230px;
+    }
+
+
+    /* LOCATION */
+
+    .location {
+        padding: 40px 5%;
+    }
+
+
+    .location-text h2 {
+        font-size: 25px;
+    }
+
+
+    .location-text p {
+        font-size: 14px;
+    }
+
+
+    .location-image iframe {
+        height: 300px;
+    }
+
+
+    /* FORM PEMESANAN */
+
+    .order {
+        min-height: auto;
+
+        padding: 35px 15px;
+    }
+
+
+    .order-container {
+        padding: 20px;
+    }
+
+
+    .order-container h2 {
+        font-size: 24px;
+    }
+
+
+    .payment {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 30px 5%;
+    }
+
 }
