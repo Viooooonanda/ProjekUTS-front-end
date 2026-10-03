@@ -94,11 +94,7 @@ header {
     gap: 15px;
 
     /* gradasi background */
-    background: linear-gradient(
-        135deg,
-        var(--header-light),
-        var(--header-soft)
-    );
+    background: linear-gradient(135deg, var(--header-light), var(--header-soft));
     /* garis di bawah header */
     border-bottom: 1px solid var(--black);
 }
@@ -111,7 +107,6 @@ header {
 .logo img {
     width: 65px;
     height: 65px;
-
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid var(--black);
@@ -195,12 +190,7 @@ nav > a.active {
     align-items: center;
     justify-content: space-between;/*mengatur posisi text dan gambar*/
     gap: 50px;
-
-    background: linear-gradient(
-        135deg,
-        var(--yellow-light),
-        var(--yellow-soft)
-    );
+    background: linear-gradient(135deg, var(--yellow-light), var(--yellow-soft));
 }
 /* HERO TEXT */
 
@@ -327,12 +317,7 @@ nav > a.active {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-
-    background: linear-gradient(
-        135deg,
-        var(--yellow-light),
-        var(--yellow-soft)
-    );
+    background: linear-gradient(135deg, var(--yellow-light), var(--yellow-soft));
 }
 .location-text {
     flex: 1;
@@ -371,13 +356,7 @@ footer {
     width: 100%;
     margin-top: auto;
     padding: 35px 7%;
-
-    background: linear-gradient(
-        135deg,
-        var(--footer-light),
-        var(--footer-soft)
-    );
-
+    background: linear-gradient(135deg,var(--footer-light), var(--footer-soft));
     border-top: 1px solid var(--black);
     text-align: center;
 }
@@ -424,7 +403,6 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background: linear-gradient(
         135deg,
         var(--yellow-light),
@@ -604,6 +582,11 @@ footer {
     border: 1px solid var(--black);
     border-radius: 8px;
     background: var(--white);
+}
+
+/* Zebra striping biasa */
+tr:nth-child(even) {
+    background-color: var(--pure-white-gold); 
 }
 
 .product-table {
